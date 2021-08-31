@@ -15,9 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-
         primarySwatch: Colors.blue,
-
       ),
       debugShowCheckedModeBanner: false,
       home: const ShowTime(),
@@ -38,51 +36,141 @@ class _ShowTimeState extends State<ShowTime> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:AppBar(),
-      body:Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children:[
-          DateTimePicker(
-            SelectedDate: DateTime.now(),
-            SelectedDateFunction:
-                (DateTime SelectedTime) {
-              SelectedDate = SelectedTime;
-            },
-              dateMode :DateMode.normal,
-              dateChoices: DateChoices.date,
-          ),
+        appBar: AppBar(),
+        body:
+            Column(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
+         Card (
+           color:Colors.white70,
+           child:
+             Column(
+               children:[
+                 Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+                   CustomeText(text: "Android Date"),
+                   DateTimePicker(
+                     SelectedDate: DateTime.now(),
+                     SelectedDateFunction: (DateTime SelectedTime) {
+                       SelectedDate = SelectedTime;
+                     },
+                     dateMode: DateMode.normal,
+                     dateChoices: DateChoices.date,
+                   ),
+                 ]),
+                 Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+                   CustomeText(text: "Android Time"),
+                   DateTimePicker(
+                     SelectedDate: DateTime.now(),
+                     SelectedDateFunction: (DateTime SelectedTime) {
+                       SelectedDate = SelectedTime;
+                     },
+                     dateMode: DateMode.normal,
+                     dateChoices: DateChoices.time,
+                   ),
+                 ]),
+                 Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+                   CustomeText(text: "Android Date and Time"),
+                   DateTimePicker(
+                     SelectedDate: DateTime.now(),
+                     SelectedDateFunction: (DateTime SelectedTime) {
+                       SelectedDate = SelectedTime;
+                     },
+                     dateMode: DateMode.normal,
+                     dateChoices: DateChoices.dateAndTime,
+                   ),
+                 ]),
 
+               ]
+             )
+         ),
 
-          DateTimePicker(
-            SelectedDate: DateTime.now(),
-            SelectedDateFunction:
-                (DateTime SelectedTime) {
-              SelectedDate = SelectedTime;
+              Card(
+                child:Column(
 
-            },
-            dateMode :DateMode.normal,
-            dateChoices: DateChoices.dateAndTime,
-          ),
-          DateTimePicker(
-            SelectedDate: DateTime.now(),
-            SelectedDateFunction:
-                (DateTime SelectedTime) {
-              SelectedDate = SelectedTime;
-            },
-            dateMode :DateMode.cupertino,
-            dateChoices: DateChoices.date,
-          ),
-          DateTimePicker(
-            SelectedDate: DateTime.now(),
-            SelectedDateFunction:
-                (DateTime SelectedTime) {
-              SelectedDate = SelectedTime;
-            },
-            dateMode :DateMode.cupertino,
-            dateChoices: DateChoices.dateAndTime,
-          ),
-        ]
-      )
-    );
+                 children:[
+               Row(
+                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                 children:[
+                   CustomeText(text: "IOS Date "),
+
+                   DateTimePicker(
+                     SelectedDate: DateTime.now(),
+                     SelectedDateFunction: (DateTime SelectedTime) {
+                       SelectedDate = SelectedTime;
+                     },
+                     dateMode: DateMode.cupertino,
+                     dateChoices: DateChoices.date,
+                   ),
+
+                 ]
+               ),
+                   Row(
+                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                       children:[
+                         CustomeText(text: "IOS TIME "),
+
+                         DateTimePicker(
+                           SelectedDate: DateTime.now(),
+                           SelectedDateFunction: (DateTime SelectedTime) {
+                             SelectedDate = SelectedTime;
+                           },
+                           dateMode: DateMode.cupertino,
+                           dateChoices: DateChoices.time,
+                         ),
+
+                       ]
+                   ),
+
+                   Row(
+                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                       children:[
+                         CustomeText(text: "IOS  Date and TIME "),
+
+                         DateTimePicker(
+                           SelectedDate: DateTime.now(),
+                           SelectedDateFunction: (DateTime SelectedTime) {
+                             SelectedDate = SelectedTime;
+                           },
+                           dateMode: DateMode.cupertino,
+                           dateChoices: DateChoices.dateAndTime,
+                         ),
+
+                       ]
+                   ),
+                 ]
+
+                )
+              )
+        ]));
+  }
+}
+
+// class CustomeRow extends StatelessWidget {
+//   const CustomeRow({Key? key,required this.children}) : super(key: key);
+//  final List<Widget> children ;
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Row(
+//       children:[
+//         [children]
+//       ]
+//     );
+//   }
+// }
+
+class CustomeText extends StatelessWidget {
+  const CustomeText(
+      {Key? key,
+      required this.text,
+      this.fontSize = 16,
+      this.fontColor = Colors.black})
+      : super(key: key);
+  final String text;
+
+  final double fontSize;
+  final Color fontColor;
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(text, style: TextStyle(fontSize: fontSize, color: fontColor));
   }
 }

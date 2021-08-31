@@ -172,12 +172,14 @@ class _DateTimePickerState extends State<DateTimePicker> {
     showCupertinoModalPopup(
         context: ctx,
         builder: (_) => Container(
-          width:MediaQuery.of(context).size.width*.6,
+          width:MediaQuery.of(context).size.width*0.6,
+          height: MediaQuery.of(context).size.height*.8,
           color: Color.fromARGB(255, 255, 255, 255),
           child: Column(
             children: [
               Container(
-                width:MediaQuery.of(context).size.width*.6,
+                width:MediaQuery.of(context).size.width*0.6,
+                height:MediaQuery.of(context).size.height*0.6 ,
 
                 child: CupertinoDatePicker(
                     mode: CupertinoDatePickerMode.date,
