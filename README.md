@@ -1,16 +1,13 @@
-# date_picker
 
-A new Flutter project.
+### In this app you can use Date Picker with many choices (Android,Cupertino) modes and with different choices like (date,time,date and time).
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+## Choose date from Android date picker
 
-A few resources to get you started if this is your first Flutter project:
+![](media/android.gif)
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+##Choose date from cupertino date picker
+
+![](media/cupertino.gif)
+
